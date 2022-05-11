@@ -71,8 +71,9 @@
   } catch (e) {
     // Don't even think of throwing an error.
   }
-  script.src = appName + '/generated/' + lang +
-      (debug ? '/uncompressed.js' : '/compressed.js');
+  /*script.src = appName + '/generated/' + lang +
+      (debug ? '/uncompressed.js' : '/compressed.js'); */
+  script.src = appName
   script.type = 'text/javascript';
   document.head.appendChild(script);
 })();
