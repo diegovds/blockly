@@ -9,6 +9,8 @@ html, body {
 #languageMenu {
   position: absolute;
   top: 0;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 html[dir="LTR"] #languageMenu {
