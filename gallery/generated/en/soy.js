@@ -21,7 +21,7 @@ if (goog.DEBUG) {
 
 
 Gallery.soy.start = function(opt_data, opt_ignored, opt_ijData) {
-  return '<table width="100%"><tr><td><h1>' + BlocklyGames.soy.titleSpan({appName: soy.$$escapeHtml(opt_ijData.appName) + 'Gallery'}, null, opt_ijData) + '</h1></td><td class="farSide"><select id="languageMenu"></select></td></tr></table><div id="gallery"></div><div id="loading"><img src="common/loading.gif"></div>';
+  return '<table width="100%"><tr><td><h1>' + BlocklyGames.soy.titleSpan({appName: soy.$$escapeHtml(opt_ijData.appName) + 'Gallery'}, null, opt_ijData) + '</h1></td><td class="farSide"></td></tr></table><div id="gallery"></div><div id="loading"><img src="common/loading.gif"></div>';
 };
 if (goog.DEBUG) {
   Gallery.soy.start.soyTemplateName = 'Gallery.soy.start';
