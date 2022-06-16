@@ -18195,6 +18195,8 @@ function jm() {
   return '<div class="farSide" style="padding: 1ex 3ex 0"><button class="secondary" onclick="BlocklyDialogs.hideDialog(true)">OK</button></div>'
 }
 function km() {
+  const urlSearchParams = new URLSearchParams(window.location.search)
+  var lv = urlSearchParams.get("levels")
   var a = Pl,
     b = lm,
     c =
@@ -18205,6 +18207,7 @@ function km() {
           : '<a href="./?lang=' + em(Ll) + '">') +
         'Maze Game Generator</a> : </span>')
   b = '&skin=' + em(b)
+  lv = '&levels=' + em(lv)
   for (var e = ' &nbsp; ', f = a + 1, h = 1; h < f; h++)
     e +=
       ' ' +
@@ -18222,6 +18225,7 @@ function km() {
           '&level=' +
           em(h) +
           em(b) +
+          em(lv) +
           '">' +
           em(h) +
           '</a>'
@@ -18232,6 +18236,7 @@ function km() {
           '&level=' +
           em(h) +
           em(b) +
+          em(lv) +
           '"></a>')
   return (
     c +
