@@ -18266,6 +18266,8 @@ function km() {
 }
 var Tl = 'maze'
 U.ll = function () {
+  const urlSearchParams = new URLSearchParams(window.location.search)
+  var a = urlSearchParams.get("levels")
   Q < Pl
     ? (window.location =
         window.location.protocol +
@@ -18277,7 +18279,9 @@ U.ll = function () {
         '&level=' +
         (Q + 1) +
         '&skin=' +
-        lm)
+        lm +
+        '&levels=' +
+        a)
     : U.Qi()
 }
 var mm = [
@@ -18704,11 +18708,11 @@ async function getAMaze(){
 }
 
 async function wm() {
-  var a = document.getElementById( "levelData" ).innerHTML
+  //var a = document.getElementById( "levelData" ).innerHTML
   //var a = await getAMaze()
 
-  //const urlSearchParams = new URLSearchParams(window.location.search)
-  //var a = urlSearchParams.get("levels")
+  const urlSearchParams = new URLSearchParams(window.location.search)
+  var a = urlSearchParams.get("levels")
 
   console.log('levelData =',a)
   a = JSON.parse(a)
@@ -19137,6 +19141,8 @@ window.addEventListener('load', function () {
     l.style.width = window.innerWidth - 440 + 'px'
   }
   function b(n) {
+    const urlSearchParams = new URLSearchParams(window.location.search)
+    var a = urlSearchParams.get("levels")
     return function () {
       if (window.sessionStorage) {
         var p = C.u.Ll(P)
@@ -19153,7 +19159,9 @@ window.addEventListener('load', function () {
         '&level=' +
         Q +
         '&skin=' +
-        n
+        n +
+        '&levels=' +
+        a
     }
   }
   wm()
