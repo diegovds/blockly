@@ -17549,7 +17549,6 @@ var U = {
           window.location.pathname +
           '?lang=' +
           Ll +
-          '?id=' +
           '&level=' +
           (Q + 1))
       : U.Qi()
@@ -18220,7 +18219,6 @@ function km() {
           em(h) +
           '" href="?lang=' +
           em(Ll) +
-          '?id=' +
           '&level=' +
           em(h) +
           em(b) +
@@ -18231,7 +18229,6 @@ function km() {
           em(h) +
           '" href="?lang=' +
           em(Ll) +
-          '?id=' +
           '&level=' +
           em(h) +
           em(b) +
@@ -18277,7 +18274,6 @@ U.ll = function () {
         window.location.pathname +
         '?lang=' +
         Ll +
-        '?id=' +
         '&level=' +
         (Q + 1) +
         '&skin=' +
@@ -18708,11 +18704,11 @@ async function getAMaze(){
 }
 
 async function wm() {
-  //var a = document.getElementById( "levelData" ).innerHTML
+  var a = document.getElementById( "levelData" ).innerHTML
   //var a = await getAMaze()
 
-  const urlSearchParams = new URLSearchParams(window.location.search)
-  var a = urlSearchParams.get("levels")
+  //const urlSearchParams = new URLSearchParams(window.location.search)
+  //var a = urlSearchParams.get("levels")
 
   console.log('levelData =',a)
   a = JSON.parse(a)
@@ -19154,7 +19150,6 @@ window.addEventListener('load', function () {
         window.location.pathname +
         '?lang=' +
         Ll +
-        '?id=' +
         '&level=' +
         Q +
         '&skin=' +
