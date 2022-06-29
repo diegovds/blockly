@@ -17515,7 +17515,27 @@ var U = {
   Ew: function () {
     window.localStorage && (window.localStorage[Tl + Q] = U.Pm())
   },
-  Qi: function () {
+  Qi: async function () {
+    const urlSearchParams = new URLSearchParams(window.location.search)
+    var mazeId = urlSearchParams.get("mazeId")
+
+    var response = await fetch(
+      'https://maze-game-backend.herokuapp.com/api' + '/mazes/' + mazeId
+    )
+    var maze = await response.json()
+
+    maze = maze.data
+
+    const dataMaze = new FormData()
+    const concs = maze.conclusions + 1
+
+    dataMaze.append('conclusions', concs)
+
+    await fetch('https://maze-game-backend.herokuapp.com/api' + "/mazes/" + mazeId, {
+      method: "PUT",
+      body: dataMaze
+    })
+
     window.location = 'https://mazegamegenerator.vercel.app/'
   },
   bu: function () {
@@ -18197,6 +18217,7 @@ function jm() {
 function km() {
   const urlSearchParams = new URLSearchParams(window.location.search)
   var lv = urlSearchParams.get("levels")
+  var mazeId = urlSearchParams.get("mazeId")
   var a = Pl,
     b = lm,
     c =
@@ -18208,6 +18229,7 @@ function km() {
         'Maze Game Generator</a> : </span>')
   b = '&skin=' + em(b)
   lv = '&levels=' + em(lv)
+  mazeId = '&mazeId=' + em(mazeId)
   for (var e = ' &nbsp; ', f = a + 1, h = 1; h < f; h++)
     e +=
       ' ' +
@@ -18226,6 +18248,7 @@ function km() {
           em(h) +
           em(b) +
           em(lv) +
+          em(mazeId) +
           '">' +
           em(h) +
           '</a>'
@@ -18273,6 +18296,7 @@ var Tl = 'maze'
 U.ll = function () {
   const urlSearchParams = new URLSearchParams(window.location.search)
   var a = urlSearchParams.get("levels")
+  var mazeId = urlSearchParams.get("mazeId")
   Q < Pl
     ? (window.location =
         window.location.protocol +
@@ -18286,7 +18310,9 @@ U.ll = function () {
         '&skin=' +
         lm +
         '&levels=' +
-        a)
+        a +
+        '&mazeId=' +
+        mazeId)
     : U.Qi()
 }
 var mm = [
@@ -18694,32 +18720,11 @@ function vm() {
   b.appendChild(c)
 }
 
-async function getAMaze(){
-  const response = await fetch("https://maze-game-backend.herokuapp.com/api/mazes/29")
-
-  //console.log(response)
-
-  const data = await response.json()
-
-  //console.log(data.data.levels)
-
-  var maze = data.data.levels
-  maze = JSON.stringify(maze)
-
-  //console.log(typeof(maze))
-  //console.log(maze)
-
-  return maze
-}
-
 async function wm() {
-  //var a = document.getElementById( "levelData" ).innerHTML
-  //var a = await getAMaze()
-
   const urlSearchParams = new URLSearchParams(window.location.search)
   var a = urlSearchParams.get("levels")
 
-  console.log('levelData =',a)
+  //console.log('levelData =',a)
   a = JSON.parse(a)
   Pl = a.length
   om = a[Q - 1]
@@ -19148,6 +19153,7 @@ window.addEventListener('load', function () {
   function b(n) {
     const urlSearchParams = new URLSearchParams(window.location.search)
     var a = urlSearchParams.get("levels")
+    var mazeId = urlSearchParams.get("mazeId")
     return function () {
       if (window.sessionStorage) {
         var p = C.u.Ll(P)
@@ -19166,7 +19172,9 @@ window.addEventListener('load', function () {
         '&skin=' +
         n +
         '&levels=' +
-        a
+        a +
+        '&mazeId=' +
+        mazeId
     }
   }
   wm()
