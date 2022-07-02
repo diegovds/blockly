@@ -18197,6 +18197,7 @@ function jm() {
 function km() {
   const urlSearchParams = new URLSearchParams(window.location.search)
   var lv = urlSearchParams.get("levels")
+  var url_image = urlSearchParams.get("url_image")
   var a = Pl,
     b = lm,
     c =
@@ -18208,6 +18209,7 @@ function km() {
         'Maze Game Generator</a> : </span>')
   b = '&skin=' + em(b)
   lv = '&levels=' + em(lv)
+  url_image = '&url_image=' + em(url_image)
   for (var e = ' &nbsp; ', f = a + 1, h = 1; h < f; h++)
     e +=
       ' ' +
@@ -18226,6 +18228,7 @@ function km() {
           em(h) +
           em(b) +
           em(lv) +
+          em(url_image) +
           '">' +
           em(h) +
           '</a>'
@@ -18237,6 +18240,7 @@ function km() {
           em(h) +
           em(b) +
           em(lv) +
+          em(url_image) +
           '"></a>')
   return (
     c +
@@ -18273,6 +18277,7 @@ var Tl = 'maze'
 U.ll = function () {
   const urlSearchParams = new URLSearchParams(window.location.search)
   var a = urlSearchParams.get("levels")
+  var url_image = urlSearchParams.get("url_image")
   Q < Pl
     ? (window.location =
         window.location.protocol +
@@ -18286,7 +18291,9 @@ U.ll = function () {
         '&skin=' +
         lm +
         '&levels=' +
-        a)
+        a +
+        '&url_image=' +
+        url_image)
     : U.Qi()
 }
 var mm = [
@@ -18718,12 +18725,13 @@ async function wm() {
 
   const urlSearchParams = new URLSearchParams(window.location.search)
   var a = urlSearchParams.get("levels")
+  var url_image = urlSearchParams.get("url_image")
 
   console.log('levelData =',a)
   a = JSON.parse(a)
   Pl = a.length
   om = a[Q - 1]
-  nm[0].background = 'maze/background.png'
+  nm[0].background = url_image
   nm[0].Hl = 'maze/tiles.png'
   nm[0].Eg = 'maze/pegman.png'
   nm[0].$i = 'maze/marker.png'
@@ -19148,6 +19156,7 @@ window.addEventListener('load', function () {
   function b(n) {
     const urlSearchParams = new URLSearchParams(window.location.search)
     var a = urlSearchParams.get("levels")
+    var url_image = urlSearchParams.get("url_image")
     return function () {
       if (window.sessionStorage) {
         var p = C.u.Ll(P)
@@ -19166,7 +19175,9 @@ window.addEventListener('load', function () {
         '&skin=' +
         n +
         '&levels=' +
-        a
+        a +
+        '&url_image=' +
+        url_image
     }
   }
   wm()
