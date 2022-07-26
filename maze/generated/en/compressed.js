@@ -19150,8 +19150,8 @@ function Jm(a, b) {
 window.addEventListener('load', function () {
   function a() {
     l.style.top = Math.max(10, m.offsetTop - window.pageYOffset) + 'px'
-    l.style.left = k ? '10px' : '750px'
-    l.style.width = window.innerWidth - 440 + 'px'
+    l.style.left = k ? '10px' : '590px'
+    l.style.width = window.innerWidth - 700 + 'px'
   }
   function b(n) {
     const urlSearchParams = new URLSearchParams(window.location.search)
