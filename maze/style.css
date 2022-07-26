@@ -1,6 +1,7 @@
 #blockly {
   position: fixed;
   bottom: 10px;
+  height: 28.5rem;
 }
 #visualization {
   position: relative;
@@ -62,6 +63,8 @@ img[src$="help_down.png"] {
 
 #svgMaze {
   overflow: hidden;
+  height: 30rem;
+  width: 35rem;
 }
 
 /* 'Look' icon */
