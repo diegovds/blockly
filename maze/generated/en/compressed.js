@@ -18727,7 +18727,7 @@ async function wm() {
   var a = urlSearchParams.get("levels")
   var url_image = urlSearchParams.get("url_image")
 
-  console.log('levelData =',a)
+  //console.log('levelData =',a)
   a = JSON.parse(a)
   Pl = a.length
   om = a[Q - 1]
