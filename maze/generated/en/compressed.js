@@ -18725,6 +18725,13 @@ async function wm() {
 
   const urlSearchParams = new URLSearchParams(window.location.search)
   var a = urlSearchParams.get("levels")
+
+  if(a === null){
+    //console.log(a)
+    alert('Está página deve ser acessada a partir da plataforma My Blockly Maze')
+    window.location.assign('https://myblocklymaze.vercel.app/')
+  }
+
   var url_image = urlSearchParams.get("url_image")
 
   //console.log('levelData =',a)
