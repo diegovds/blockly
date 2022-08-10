@@ -18728,7 +18728,7 @@ async function wm() {
 
   if(a === null){
     //console.log(a)
-    alert('O jogo deve ser acessada a partir da plataforma My Blockly Maze')
+    alert('Acesse por My Blockly Maze.')
     window.location.assign('https://myblocklymaze.vercel.app/')
   }
 
