@@ -18701,27 +18701,49 @@ function vm() {
   b.appendChild(c)
 }
 
-async function getAMaze(){
-  const response = await fetch("https://maze-game-backend.herokuapp.com/api/mazes/29")
+/*async function wm() {
+  const mazeBody = document.querySelector('.mazeBody')
 
-  //console.log(response)
+  fetch("https://maze-game-backend.herokuapp.com/api/mazes/205")
+  .then((response) => {
+      if (response.ok) {
+      return response.json();
+      }
+      throw new Error("Ocorreu um erro, por favor tente mais tarde.");
+  })
+  .then((data) => {
+      data = data.data
+      //console.log(data)
+      
+      var a
+      
+      a = JSON.stringify(data.levels)
+      console.log('levelData =',a)
+      console.log('url_image =',data.url_image)
+      Pl = a.length
+      om = a[Q - 1]
+      nm[0].background = data.url_image
+      nm[0].Hl = 'maze/tiles.png'
+      nm[0].Eg = 'maze/pegman.png'
+      nm[0].$i = 'maze/marker.png'
+      pm = om.length
+      qm = om[0].length
+      rm = 50 * qm
+      sm = 50 * pm
 
-  const data = await response.json()
+      mazeBody.style.visibility  = 'visible'
+  })
+  .catch((error) => {
+    alert(error.message)
+    //window.location.assign('https://myblocklymaze.vercel.app/')
+  });
+}*/
 
-  //console.log(data.data.levels)
-
-  var maze = data.data.levels
-  maze = JSON.stringify(maze)
-
-  //console.log(typeof(maze))
-  //console.log(maze)
-
-  return maze
-}
-
-async function wm() {
+function wm() {
   //var a = document.getElementById( "levelData" ).innerHTML
-  //var a = await getAMaze()
+  
+  const mazeBody = document.querySelector('.mazeBody')
+  mazeBody.style.visibility  = 'visible'
 
   const urlSearchParams = new URLSearchParams(window.location.search)
   var a = urlSearchParams.get("levels")
