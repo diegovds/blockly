@@ -19315,10 +19315,12 @@ function resetLocalStorage () {
 const switchModal = () => {
   const modal = document.querySelector('.modal')
   const actualStyle = modal.style.display
+  const videoYT = document.querySelector('.videoYT')
   if(actualStyle == 'block') {
     modal.style.display = 'none'
   }
   else {
+    videoYT.src += "?autoplay=1"
     modal.style.display = 'flex'
   }
 }
@@ -19331,7 +19333,7 @@ const clickClose = () => {
 
   //console.log(videoYT)
   //console.log(videoYT.src)
-  videoYT.src = videoYT.src
+  videoYT.src = videoYT.src.replace('?autoplay=1', '')
 }
 
 window.onclick = function(event) {
@@ -19341,6 +19343,6 @@ window.onclick = function(event) {
   if (event.target == modal) {
     //switchModal()
     modal.style.display = 'none'
-    videoYT.src = videoYT.src
+    videoYT.src = videoYT.src.replace('?autoplay=1', '')
   }
 }
