@@ -167,7 +167,7 @@ html[dir="RTL"] #pegmanButton>span {
   background-color: #fff;
   padding: 10px;
   border-radius: 8px;
-  width: 60%;
+  width: auto;
   
   display: flex;
   flex-direction: column;
