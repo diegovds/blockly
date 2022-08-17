@@ -19302,3 +19302,12 @@ window.addEventListener('load', function () {
   setTimeout(U.Hv, 1)
   setTimeout(U.Iv, 1)
 })
+
+function resetLocalStorage () {
+  const urlSearchParams = new URLSearchParams(window.location.search)
+  var reset = urlSearchParams.get("reset")
+
+  if (reset == 1) {
+    localStorage.clear()
+  }
+}
