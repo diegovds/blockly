@@ -164,7 +164,7 @@ html[dir="RTL"] #pegmanButton>span {
 
 .modal .content{
   /*font-family: 'Fredoka', cursive;*/
-  background-color: #fff;
+  background-color: #eceeed;
   padding: 10px;
   border-radius: 8px;
   width: auto;
@@ -211,4 +211,9 @@ html[dir="RTL"] #pegmanButton>span {
 
 .modal .content ul {
   list-style:disc;
+}
+
+.modal .content .videoYT {
+  border-radius: 8px;
+  border: 2px solid #4d90fe;
 }
