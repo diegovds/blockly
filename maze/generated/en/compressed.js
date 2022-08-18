@@ -19320,7 +19320,7 @@ const switchModal = () => {
     modal.style.display = 'none'
   }
   else {
-    videoYT.src += "?autoplay=1"
+    videoYT.src += "?autoplay=1&loop=1&controls=0&playlist=f3D2Wc3frxU"
     modal.style.display = 'flex'
   }
 }
@@ -19333,7 +19333,7 @@ const clickClose = () => {
 
   //console.log(videoYT)
   //console.log(videoYT.src)
-  videoYT.src = videoYT.src.replace('?autoplay=1', '')
+  videoYT.src = videoYT.src.replace('?autoplay=1&loop=1&controls=0&playlist=f3D2Wc3frxU', '')
 }
 
 window.onclick = function(event) {
@@ -19343,6 +19343,6 @@ window.onclick = function(event) {
   if (event.target == modal) {
     //switchModal()
     modal.style.display = 'none'
-    videoYT.src = videoYT.src.replace('?autoplay=1', '')
+    videoYT.src = videoYT.src.replace('?autoplay=1&loop=1&controls=0&playlist=f3D2Wc3frxU', '')
   }
 }
