@@ -18207,7 +18207,7 @@ function km() {
         (Nl
           ? '<a href=' + window.location.href + '>'
           : '<a href="./?lang=' + em(Ll) + '">') +
-        'My Blockly Maze</a></span>')
+        'Maze Game</a></span>')
   b = '&skin=' + em(b)
   lv = '&levels=' + em(lv)
   url_image = '&url_image=' + em(url_image)
