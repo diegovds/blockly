@@ -17516,6 +17516,7 @@ var U = {
     window.localStorage && (window.localStorage[Tl + Q] = U.Pm())
   },
   Qi: function () {
+    window.parent.postMessage('mensagem vinda do iframe', '*')
     window.location = 'https://myblocklymaze.vercel.app/'
   },
   bu: function () {
