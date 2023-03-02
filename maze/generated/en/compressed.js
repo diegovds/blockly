@@ -19354,3 +19354,9 @@ window.onclick = function(event) {
     videoYT.loop = false;
   }
 }
+
+window.addEventListener('load', function() {
+	let message = {message: "altura e largura", height: document.body.scrollHeight + 22, width: document.body.scrollWidth };	
+
+  window.parent.postMessage(message, '*')
+});
